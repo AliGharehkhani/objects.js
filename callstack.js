@@ -24,4 +24,3 @@ function edd() {
     console.log(Name);
   }
 }
-

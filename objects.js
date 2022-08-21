@@ -31,3 +31,26 @@ function average(a, b) {
 
 let l = average(10, 20);
 console.log(l);
+
+//this Keyword
+//A POINTER -> IT REFERS TO AN OBJECT
+
+const lists = document.querySelectorAll("li");
+
+lists.forEach((li) => {
+  li.addEventListener("click", function () {
+    console.log(this);
+  });
+});
+
+const user = {
+  name: "developedbyed",
+  videos: ["html", "css", "js", "react"],
+  greet() {
+    console.log(`Hello there ${this.name}`);
+    this.videos.forEach(video => {
+      console.log(this);
+    });
+  },
+};
+user.greet();
