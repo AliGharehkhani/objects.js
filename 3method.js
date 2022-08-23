@@ -39,17 +39,35 @@ let fulName = odd.fullName.bind(member);
 
 console.log(fulName());
 
-//in the following example, the person object has a display method. in the display 
-//method, this refers to the person object:
+// call method W3schools
+//this Example calls the fullName method of person, using it on person1:
 
-const Person = {
-  firstName:"John",
+const PERSON = {
+  fullName: function () {
+    return this.firstName + " " + this.lastName;
+  },
+};
+const person1 = {
+  firstName: "John",
   lastName: "Doe",
-  display: function() {
-    let x = document.getElementById("demo");
-    x.innerHTML = this.firstName + " " + this.lastName;
+};
+const person2 = {
+  firstName: "Mary",
+  lastName: "Doe",
+};
+document.getElementById("demo1").innerHTML = PERSON.fullName.call(person2);
+
+//The call() method can accept arguments Example👇:
+const Person = {
+  fullName: function(city, country) {
+    return this.firstName + " " + this.lastName + "," + city + "," + country;
   }
 }
 
-Person.display();
+const Person1 = {
+  firstName:"John",
+  lastName: "Doe"
+}
 
+
+document.getElementById("demo").innerHTML = Person.fullName.call(person1, "Oslo", "Norway"); 
